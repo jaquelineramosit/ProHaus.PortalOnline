@@ -2,7 +2,7 @@
 
 namespace ProHaus.PortalOnline.Dominio.Entidades
 {
-    public class Usuario
+    public class Usuario : Entidade
     {
         public int IdUsuario { get; set; }
         public string Login { get; set; }
@@ -13,5 +13,10 @@ namespace ProHaus.PortalOnline.Dominio.Entidades
         public string Sobrenome { get; set; }
         public int IdPerfilAcesso { get; set; }
         public DateTime DataUltModif { get; set; }
+
+        public override void Validate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

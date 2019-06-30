@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProHaus.PortalOnline.Dominio.Entidades.Cadastros
 {
-    public class Produto
+    public class Produto : Entidade
     {
         public int IdProduto { get; set; }
         public int IdTipoProduto { get; set; }
@@ -14,5 +14,10 @@ namespace ProHaus.PortalOnline.Dominio.Entidades.Cadastros
         public int IdFornecedor { get; set; }
         public bool Ativo { get; set; }
         public DateTime DataUltModif { get; set; }
+
+        public override void Validate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

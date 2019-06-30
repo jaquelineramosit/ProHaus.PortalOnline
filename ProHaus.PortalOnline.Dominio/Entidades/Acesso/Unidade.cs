@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProHaus.PortalOnline.Dominio.Entidades
 {
-    public class Unidade
+    public class Unidade : Entidade
     {
         public int IdUnidade { get; set; }
         public string Nome { get; set; }
@@ -19,5 +19,10 @@ namespace ProHaus.PortalOnline.Dominio.Entidades
         public bool Ativo { get; set; }
         public DateTime DataUltModif { get; set; }
         public ICollection<Usuario> Usuarios { get; set; }
+
+        public override void Validate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

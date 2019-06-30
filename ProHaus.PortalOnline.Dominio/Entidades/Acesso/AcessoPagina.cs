@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProHaus.PortalOnline.Dominio.Entidades
 {
-    public class AcessoPagina
+    public class AcessoPagina : Entidade
     {
 
         public int IdAcessoPagina { get; set; }
@@ -13,5 +13,10 @@ namespace ProHaus.PortalOnline.Dominio.Entidades
         public string Funcao { get; set; }
         public bool Ativo { get; set; }
         public DateTime DataUltModif { get; set; }
+
+        public override void Validate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
