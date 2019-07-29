@@ -1,5 +1,4 @@
-﻿using ProHaus.PortalOnline.Dominio.Entidades;
-
+﻿using ProHaus.PortalOnline.Dominio.Entidades.Cadastros;
 
 namespace ProHaus.PortalOnline.Dominio.Contratos.Cadastros
 {

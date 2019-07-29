@@ -1,7 +1,4 @@
-﻿using ProHaus.PortalOnline.Dominio.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ProHaus.PortalOnline.Dominio.Entidades.Acesso;
 
 namespace ProHaus.PortalOnline.Dominio.Contratos.Acesso
 {

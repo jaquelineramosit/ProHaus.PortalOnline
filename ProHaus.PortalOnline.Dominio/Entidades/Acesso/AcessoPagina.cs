@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ProHaus.PortalOnline.Dominio.Entidades
+namespace ProHaus.PortalOnline.Dominio.Entidades.Acesso
 {
     public class AcessoPagina : Entidade
     {

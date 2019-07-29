@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProHaus.PortalOnline.Dominio.Entidades
+namespace ProHaus.PortalOnline.Dominio.Entidades.Acesso
 {
     public class Usuario : Entidade
     {

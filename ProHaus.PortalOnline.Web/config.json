@@ -1,0 +1,7 @@
+{
+  //"Chave": "Valor Chave", estrutura chave-valor
+  "ConnectionStrings": {
+    "SQLServerConnection": "\"\";",
+    "ProHausDB": "server=localhost;uid=root;pwd=2401;database=ProHausDB"
+  }
+}
