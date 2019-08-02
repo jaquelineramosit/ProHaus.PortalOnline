@@ -5,7 +5,7 @@ namespace ProHaus.PortalOnline.Dominio.Entidades.Acesso
 {
     public class Unidade : Entidade
     {
-        public int IdUnidade { get; set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Logradouro { get; set; }
         public int Numero { get; set; }
@@ -18,7 +18,7 @@ namespace ProHaus.PortalOnline.Dominio.Entidades.Acesso
         public string Celular { get; set; }
         public bool Ativo { get; set; }
         public DateTime DataUltModif { get; set; }
-        public ICollection<Usuario> Usuarios { get; set; }
+        public virtual ICollection<Usuario> Usuarios { get; set; }
 
         public override void Validate()
         {

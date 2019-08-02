@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
@@ -27,8 +26,8 @@ namespace ProHaus.PortalOnline.Web
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             var connectionString = Configuration.GetConnectionString("ProHausDB");
             services.AddDbContext<ProHausContexto>(option => 
-                                                            option.UseMySql(connectionString, 
-                                                                                              m => m.MigrationsAssembly("ProHaus.PortalOnline.Web")));
+                                                            option.UseLazyLoadingProxies().UseMySql(connectionString, 
+                                                            m => m.MigrationsAssembly("ProHaus.PortalOnline.Web")));
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

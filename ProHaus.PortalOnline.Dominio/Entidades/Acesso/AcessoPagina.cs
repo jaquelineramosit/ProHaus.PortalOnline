@@ -6,8 +6,9 @@ namespace ProHaus.PortalOnline.Dominio.Entidades.Acesso
     public class AcessoPagina : Entidade
     {
 
-        public int IdAcessoPagina { get; set; }
-        public int IdPerfilAcesso { get; set; }
+        public int Id { get; set; }
+        public int PerfilAcessoId { get; set; }
+        public virtual PerfilAcesso PerfilAcesso { get; set; }
         public string NomePagina { get; set; }
         public string SubPagina { get; set; }
         public string Funcao { get; set; }
