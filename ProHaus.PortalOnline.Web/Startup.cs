@@ -27,7 +27,7 @@ namespace ProHaus.PortalOnline.Web
             var connectionString = Configuration.GetConnectionString("ProHausDB");
             services.AddDbContext<ProHausContexto>(option => 
                                                             option.UseLazyLoadingProxies().UseMySql(connectionString, 
-                                                            m => m.MigrationsAssembly("ProHaus.PortalOnline.Web")));
+                                                            m => m.MigrationsAssembly("ProHaus.PortalOnline.Repositorio")));
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

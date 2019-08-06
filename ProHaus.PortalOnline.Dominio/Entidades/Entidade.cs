@@ -7,7 +7,7 @@ namespace ProHaus.PortalOnline.Dominio.Entidades
 {
     public abstract class Entidade
     {
-        public List<string> _mensagemValidacao { get; set; }
+        private List<string> _mensagemValidacao { get; set; }
         private List<string> MensagemValidacacao {
             get { return _mensagemValidacao ?? (_mensagemValidacao = new List<string>()); }
             

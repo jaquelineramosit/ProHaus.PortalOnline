@@ -9,7 +9,18 @@ namespace ProHaus.PortalOnline.Repositorio.Config.Cadastro
     {
         public void Configure(EntityTypeBuilder<TipoProduto> builder)
         {
-            throw new NotImplementedException();
+            builder.HasKey(u => u.Id);
+
+            builder
+                .Property(u => u.Nome)
+                .IsRequired()
+                //.HasColumnType("varchar")
+                .HasMaxLength(150);
+
+            builder
+                .Property(u => u.Ativo)
+                .IsRequired();
+                //.HasColumnType("bit");
         }
     }
 }

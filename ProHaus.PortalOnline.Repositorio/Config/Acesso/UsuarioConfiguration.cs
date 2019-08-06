@@ -15,36 +15,33 @@ namespace ProHaus.PortalOnline.Repositorio.Config.Acesso
             builder
                 .Property(u => u.Login)
                 .IsRequired()
-                .HasColumnType("varchar")
+                //.HasColumnType("varchar")
                 .HasMaxLength(150);
             builder
                 .Property(u => u.Senha)
                 .IsRequired()
-                .HasColumnType("varchar")
+                //.HasColumnType("varchar")
                 .HasMaxLength(400);
             builder
                 .Property(u => u.Ativo)
-                .IsRequired()
-                .HasColumnType("Bit");
+                .IsRequired();
+                //.HasColumnType("Bit");
             builder
                 .Property(u => u.UnidadeId)
-                .IsRequired()
-                .HasColumnType("int");
+                .IsRequired();
+                //.HasColumnType("int");
             builder
                 .Property(u => u.Nome)
-                .HasColumnType("varchar")
+                //.HasColumnType("varchar")
                 .HasMaxLength(100);
             builder
                 .Property(u => u.Sobrenome)
-                .HasColumnType("varchar")
+                //.HasColumnType("varchar")
                 .HasMaxLength(150);
             builder
-                .Property(u => u.PerfilAcessoId)
-                .HasColumnType("int");
-            builder
-                .Property(u => u.DataUltModif)
-                .IsRequired()
-                .HasColumnType("datetime");
+                .Property(u => u.PerfilAcessoId);
+                //.HasColumnType("int");
+            
         }
     }
 }

@@ -8,7 +8,21 @@ namespace ProHaus.PortalOnline.Repositorio.Config.Acesso
     {
         public void Configure(EntityTypeBuilder<PerfilAcesso> builder)
         {
-            throw new System.NotImplementedException();
+            builder.HasKey(u => u.Id);
+            builder
+                .Property(u => u.Perfil)
+                .IsRequired()
+                //.HasColumnType("varchar")
+                .HasMaxLength(50);
+            builder
+                .Property(u => u.Descricao)
+                .IsRequired()
+                //.HasColumnType("varchar")
+                .HasMaxLength(150);
+            builder
+                .Property(u => u.Ativo)
+                .IsRequired();
+               // .HasColumnType("bit");
         }
     }
 }
