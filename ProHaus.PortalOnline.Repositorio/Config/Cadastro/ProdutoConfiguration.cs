@@ -24,7 +24,7 @@ namespace ProHaus.PortalOnline.Repositorio.Config.Cadastro
                 .Property(u => u.ParNumber)
                 .IsRequired()
                 //.HasColumnType("varchar")
-                .HasMaxLength(2);
+                .HasMaxLength(20);
             builder
                 .Property(u => u.Nome)
                 .IsRequired()

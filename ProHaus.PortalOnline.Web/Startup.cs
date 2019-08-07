@@ -5,7 +5,11 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ProHaus.PortalOnline.Dominio.Contratos.Acesso;
+using ProHaus.PortalOnline.Dominio.Contratos.Cadastros;
 using ProHaus.PortalOnline.Repositorio.Contexto;
+using ProHaus.PortalOnline.Repositorio.Repositorios.Acesso;
+using ProHaus.PortalOnline.Repositorio.Repositorios.Cadastros;
 
 namespace ProHaus.PortalOnline.Web
 {
@@ -28,6 +32,11 @@ namespace ProHaus.PortalOnline.Web
             services.AddDbContext<ProHausContexto>(option => 
                                                             option.UseLazyLoadingProxies().UseMySql(connectionString, 
                                                             m => m.MigrationsAssembly("ProHaus.PortalOnline.Repositorio")));
+
+            services.AddScoped<IUnidadeRepositorio, UnidadeRepositorio>();
+            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+            services.AddScoped<ITipoProdutoRepositorio, TipoProdutoRepositorio>();
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

@@ -1,40 +1,52 @@
 ﻿using ProHaus.PortalOnline.Dominio.Contratos;
+using ProHaus.PortalOnline.Repositorio.Contexto;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ProHaus.PortalOnline.Repositorio.Repositorios
 {
     public class BaseRepositorio<TEntity> : IRepositorio<TEntity> where TEntity : class
     {
+        protected readonly ProHausContexto ProHausContexto;
+
+        public BaseRepositorio(ProHausContexto proHausContexto)
+        {
+            ProHausContexto = proHausContexto;
+        }
+
         public void Adicionar(TEntity entity)
         {
-            throw new NotImplementedException();
+            ProHausContexto.Set<TEntity>().Add(entity);
+            ProHausContexto.SaveChanges();
         }
 
         public void Atualizar(TEntity entity)
         {
-            throw new NotImplementedException();
+            ProHausContexto.Set<TEntity>().Update(entity);
+            ProHausContexto.SaveChanges();
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            ProHausContexto.Dispose();
         }
 
         public TEntity ObterPorId(int id)
         {
-            throw new NotImplementedException();
+            return ProHausContexto.Set<TEntity>().Find(id);
         }
 
         public IEnumerable<TEntity> ObterTodos()
         {
-            throw new NotImplementedException();
+            return ProHausContexto.Set<TEntity>().ToList();
         }
 
         public void Remover(TEntity entity)
         {
-            throw new NotImplementedException();
+            ProHausContexto.Remove(entity);
+            ProHausContexto.SaveChanges();
         }
     }
 }
