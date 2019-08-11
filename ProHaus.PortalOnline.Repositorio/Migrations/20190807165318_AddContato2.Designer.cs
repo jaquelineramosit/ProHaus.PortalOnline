@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProHaus.PortalOnline.Repositorio.Contexto;
 
 namespace ProHaus.PortalOnline.Repositorio.Migrations
 {
     [DbContext(typeof(ProHausContexto))]
-    partial class ProHausContextoModelSnapshot : ModelSnapshot
+    [Migration("20190807165318_AddContato2")]
+    partial class AddContato2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

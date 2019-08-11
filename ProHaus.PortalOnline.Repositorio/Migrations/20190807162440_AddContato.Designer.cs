@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProHaus.PortalOnline.Repositorio.Contexto;
 
 namespace ProHaus.PortalOnline.Repositorio.Migrations
 {
     [DbContext(typeof(ProHausContexto))]
-    partial class ProHausContextoModelSnapshot : ModelSnapshot
+    [Migration("20190807162440_AddContato")]
+    partial class AddContato
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -153,36 +155,6 @@ namespace ProHaus.PortalOnline.Repositorio.Migrations
                     b.HasIndex("UnidadeId");
 
                     b.ToTable("Usuarios");
-                });
-
-            modelBuilder.Entity("ProHaus.PortalOnline.Dominio.Entidades.Cadastros.Contato", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<bool>("Ativo");
-
-                    b.Property<string>("Celular")
-                        .IsRequired()
-                        .HasMaxLength(15);
-
-                    b.Property<DateTime>("DataUltModif");
-
-                    b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasMaxLength(500);
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(150);
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasMaxLength(15);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Contatos");
                 });
 
             modelBuilder.Entity("ProHaus.PortalOnline.Dominio.Entidades.Cadastros.Fornecedor", b =>

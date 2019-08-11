@@ -18,6 +18,7 @@ namespace ProHaus.PortalOnline.Repositorio.Contexto
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<TipoProduto> TipoProdutos { get; set; }
+        public DbSet<Contato> Contatos { get; set; }
 
         public ProHausContexto(DbContextOptions options) : base(options)
         {
@@ -36,6 +37,7 @@ namespace ProHaus.PortalOnline.Repositorio.Contexto
             modelBuilder.ApplyConfiguration(new FornecedorConfiguration());
             modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
             modelBuilder.ApplyConfiguration(new TipoProdutoConfiguration());
+            modelBuilder.ApplyConfiguration(new ContatosConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

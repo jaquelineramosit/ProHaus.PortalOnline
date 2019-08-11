@@ -25,7 +25,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\Produto\produto.compenet.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ProHaus.PortalOnline.Repositorio\ProHaus.PortalOnline.Repositorio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\Produto\produto.compenet.ts" />
   </ItemGroup>
 
   <ItemGroup>

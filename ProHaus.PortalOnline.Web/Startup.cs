@@ -27,7 +27,7 @@ namespace ProHaus.PortalOnline.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(option => option.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); ;
             var connectionString = Configuration.GetConnectionString("ProHausDB");
             services.AddDbContext<ProHausContexto>(option => 
                                                             option.UseLazyLoadingProxies().UseMySql(connectionString, 
@@ -36,6 +36,7 @@ namespace ProHaus.PortalOnline.Web
             services.AddScoped<IUnidadeRepositorio, UnidadeRepositorio>();
             services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
             services.AddScoped<ITipoProdutoRepositorio, TipoProdutoRepositorio>();
+            services.AddScoped<IContatoRepositorio, ContatoRepositorio>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
